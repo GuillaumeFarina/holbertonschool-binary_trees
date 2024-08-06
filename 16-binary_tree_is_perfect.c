@@ -9,20 +9,21 @@
 int get_depth(const binary_tree_t *tree)
 {
 	int depth = 0;
+
 	while (tree)
 	{
 		depth++;
 		tree = tree->left;
 	}
 
-	return depth;
+	return (depth);
 }
-
 
 /**
  * is_perfect - Check if the tree is perfect
  * @tree: A pointer to the node to measure the depth
- * @depth: 
+ * @depth: the depth
+ * @level: level
  * Return: the depth
  */
 
@@ -43,7 +44,6 @@ int is_perfect(const binary_tree_t *tree, int depth, int level)
 		&& is_perfect(tree->right, depth, level + 1));
 }
 
-
 /**
  * binary_tree_is_perfect - Check if a binary tree is perfect
  * @tree: A pointer to the root node of the tree to check
@@ -56,6 +56,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 
 	int depth = get_depth(tree);
-	return is_perfect(tree, depth, 0);
 
+	return (is_perfect(tree, depth, 0));
 }
